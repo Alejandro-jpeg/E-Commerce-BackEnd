@@ -43,12 +43,11 @@ router.post('/', async(req, res) => {
 
 router.put('/:id', async(req, res) => {
   try {
-    //First checks if that category exists by findByPk
-    const categoryData = await Category.findByPk(req.params.id)
+    /* const categoryData = await Category.findByPk(req.params.id)
       if (!categoryData) {
         res.status(404).json({message: 'No category found with that id'});
         return;
-      }
+      } */
       //Now it updates the data if there is a matching category
     categoryData = await Category.update({
       category_name : req.body.category_name},
