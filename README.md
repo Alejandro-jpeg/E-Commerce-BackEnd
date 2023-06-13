@@ -25,8 +25,8 @@ To install dependencies use the following command :
 * Clone the repository to your local machine
 * Run the schema.sql file using MySQL commands, make sure to be located in the correct folder
 * Run the following commands:
-    >npm run seeds
-    
+    >npm run seed
+
     >npm start
 
 Here is a demo:
