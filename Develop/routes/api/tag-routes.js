@@ -42,11 +42,6 @@ router.post('/', async(req, res) => {
 
 router.put('/:id', async(req, res) => {
   try {
-    /* const tagData = await Tag.findByPk(req.params.id)
-      if (!tagData) {
-        res.status(404).json({message: 'No tag found with that id'});
-        return;
-      } */
     const tagData = await Tag.update({
       tag_name: req.body.tag_name},
       {where:{
@@ -54,6 +49,10 @@ router.put('/:id', async(req, res) => {
       },
       });
     res.status(200).json({message: 'tag updated succesfully'});
+    if (!tagData) {
+      res.status(404).json({message: 'No tag found with that id'});
+      return;
+    } 
   } catch (error) {
     res.status(400).json(error);
   }
