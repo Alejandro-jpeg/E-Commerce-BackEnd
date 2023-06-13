@@ -36,7 +36,7 @@ router.post('/', async(req, res) => {
       category_name: req.body.category_name,
     }); 
     res.status(200).json(categoryData);
-  } catch (error) {
+  } catch (err) {
     res.status(400).json(err);
   }
 });
